@@ -7,14 +7,28 @@
 <body>
 
 <script>
-  // 获取当前页面参数（例如 ?uid=123&from=abc）
-  const params = window.location.search;
+  const path = window.location.pathname;   // / 或 /abc
+  const params = window.location.search;   // ?uid=123 或 空
 
-  // 目标地址
-  const target = "http://ihogu.cn/";
+  let target = "";
 
-  // 拼接跳转
-  window.location.href = target + params;
+  // 👉 情况1：访问根域名（/）
+  if (path === "/" || path === "") {
+    // 有参数 → 带参数跳 harry
+    if (params) {
+      target = "http://ihogu.cn/harry" + params;
+    } else {
+      // 无参数 → 直接去 harry目录
+      target = "http://ihogu.cn/harry";
+    }
+  } 
+  // 👉 情况2：访问子路径（/xxx）
+  else {
+    target = "http://ihogu.cn" + path + params;
+  }
+
+  // 跳转
+  window.location.href = target;
 </script>
 
 </body>
