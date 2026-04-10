@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>跳转中...</title>
+</head>
+<body>
+
+<script>
+  // 获取路径 + 参数
+  const path = window.location.pathname;   // /xxx
+  const params = window.location.search;   // ?uid=123
+
+  // 拼接到目标地址
+  const target = "http://ihogu.cn" + path + params;
+
+  window.location.href = target;
+</script>
+
+</body>
+</html>
