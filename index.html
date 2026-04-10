@@ -1,8 +1,21 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=http://ihogu.cn/book/">
+  <title>加载中...</title>
 </head>
 <body>
+
+<script>
+  // 获取当前页面参数（例如 ?uid=123&from=abc）
+  const params = window.location.search;
+
+  // 目标地址
+  const target = "http://ihogu.cn/";
+
+  // 拼接跳转
+  window.location.href = target + params;
+</script>
+
 </body>
 </html>
